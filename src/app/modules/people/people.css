@@ -1,7 +1,42 @@
 table {
   width: 100%;
+  min-height: 330px;
 }
 
 th {
   text-align: left;
+}
+
+.empty-msg {
+  text-align: center;
+  margin-top: 24px;
+  color: grey;
+}
+
+.pagination-container {
+  width: 100%;
+  text-align: right;
+  padding-top: 24px;
+  border-top: 1px solid;
+  margin-top: 16px;
+}
+
+.sort-header {
+  cursor: pointer;
+}
+
+.sort-header label {
+  font-weight: 400;
+  font-size: 12px;
+  margin-left: 8px;
+}
+
+input[type="search"] {
+  width: 30vw;
+  font-size: 16px;
+  float: right;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }

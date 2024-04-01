@@ -1,11 +1,13 @@
-import VendorPMLogo from "../assets/logo.png";
-import { People } from "./modules/people";
-import { AxiosProvider } from "./shared/context";
+import VendorPMLogo from "@/assets/logo.png";
+import { People } from "@modules/people";
+import { AxiosProvider } from "@shared/context";
+import { BrowserRouter } from 'react-router-dom';
 
 import "./app.css";
 
 export function App() {
   return (
+    <BrowserRouter>
     <AxiosProvider>
       <div className="App">
         <header className="header">
@@ -32,5 +34,6 @@ export function App() {
         </section>
       </div>
     </AxiosProvider>
+    </BrowserRouter>
   );
 }

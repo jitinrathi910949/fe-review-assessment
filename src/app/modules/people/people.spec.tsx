@@ -3,9 +3,9 @@ import userEvent from "@testing-library/user-event";
 import { describe, expect, test } from "vitest";
 import { rest } from "msw";
 
-import { server } from "../../../api-mocks/server";
-import { getPeople } from "../../../api-mocks/handlers/people.handler";
-import { renderWithProviders, waitForLoading } from "../../shared/util";
+import { server } from "@/api-mocks/server";
+import { getPeople } from "@/api-mocks/handlers/people.handler";
+import { renderWithProviders, waitForLoading } from "@shared/util";
 import { People } from "./people.component";
 
 const renderPeople = async () => {
