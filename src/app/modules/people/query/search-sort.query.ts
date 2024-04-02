@@ -19,7 +19,6 @@ export const useSearchSortQuery = () => {
   }, []);
 
   const onSearch = useCallback((searchText: string) => {
-    console.log("adlgjdlglfdgh", searchText);
     if (searchText) {
       searchParams.set("search", searchText);
     } else {
@@ -32,7 +31,7 @@ export const useSearchSortQuery = () => {
 
   const handleSearch = (text: string) => {
     setSearchText(text);
-    debouncedSearch(text);
+    onSearch(text);
   }
 
   return { onBtSort, handleSearch, sortOrder, searchText };

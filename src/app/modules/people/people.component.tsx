@@ -3,9 +3,7 @@ import { SORT, usePeopleQuery, useSearchSortQuery } from "./query";
 
 import "./people.css";
 import { Pagination } from "./components/pagination.component";
-import { useSearchParams } from "react-router-dom";
 import { useMemo } from "react";
-import { useDebounce } from "@/app/shared/hooks";
 
 
 const renderCells = ({ name, show, actor, movies, dob }: Person) => {
@@ -21,15 +19,6 @@ const renderCells = ({ name, show, actor, movies, dob }: Person) => {
   )
 };
 
-// const renderRows = (people: Person[]) => {
-//   if (people.length === 0) {
-//     return <tr><td colSpan={5}><h2 className="empty-msg">No People Available.</h2> </td></tr>
-//   } else {
-//     return people.map((people, index) => (
-//       <tr key={index}>{renderCells(people)}</tr>
-//     ))
-//   }
-// }
 
 
 export function People() {
@@ -62,7 +51,7 @@ export function People() {
   return (
     <>
       <div>
-        <input value={searchText} type="search" name="Search" placeholder="Search..." onChange={({ target: { value } }) => handleSearch(value)} />
+        <input id="Search" value={searchText} type="text" name="search" aria-label="Search" placeholder="Search..." onChange={({ target: { value } }) => handleSearch(value)} />
       </div>
       <table>
 

@@ -52,6 +52,7 @@ export const usePeopleQuery = (): PeopleQueryState => {
         }
       );
       const { result, totalPage, offset, totalCount } = data;
+      // to display empty data
       // setTimeout(() => {
       //   setState({ data: [], loading: false, error: undefined });
       // }, 200);
@@ -75,7 +76,7 @@ export const usePeopleQuery = (): PeopleQueryState => {
   };
 
   useEffect(() => {
-    if (isMounted.current || offset) {
+    // if (isMounted.current || offset || searchText) {
       setState(prevState => ({ ...prevState, loading: true  }));
 
       // if (!state.loading && Number(offset) !== Number(state.currentOffset))
@@ -85,7 +86,7 @@ export const usePeopleQuery = (): PeopleQueryState => {
         sort,
         search: searchText
       });
-    }
+    // }
   }, [searchParams]);
 
   const value = useMemo(() => state, [state]);
